@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root 'clients#index'
-
+  resources :clients
   # root 'projects#index'
-  # resources :clients
+
   # get '/projects', to: 'clients#index'
 
   # resource :project
@@ -20,12 +20,11 @@ Rails.application.routes.draw do
   # #   end
   # # end
   #
-  # # namespace :admin do
-  #   resource :college
-  # #   # root 'school#create'
-  # # end
-  # #
-  # scope module: :manager do
+  # namespace :admin do
+  #   resources :college
+  # end
+  #
+  # scope module: :manager, path: 'fu', as: 'cool' do
   #   resources :school
   # end
 
