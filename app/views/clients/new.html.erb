@@ -1,5 +1,5 @@
 <h1>Add New Clients</h1>
-<%= form_with model: @client do |form| %>
+<%= form_for @client do |form| %>
   <div>
     <%=form.label :name %>
     <%=form.text_field :name, autofocus:true %>
