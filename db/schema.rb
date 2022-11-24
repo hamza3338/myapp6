@@ -25,4 +25,5 @@ ActiveRecord::Schema.define(version: 2022_11_23_075012) do
     t.integer "salesman_contact"
     t.integer "client_id"
   end
+
 end

@@ -3,7 +3,7 @@ class CreateSales < ActiveRecord::Migration[6.0]
     create_table :sales do |t|
       t.string :salesman_name
       t.integer :salesman_contact
-      t.integer :client_id
+      t.integer :client_id, optional: true
     end
   end
 end
