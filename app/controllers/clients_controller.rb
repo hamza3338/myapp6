@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class ClientsController < ApplicationController
   def index
-    @client = Client.all
+    @client = Client.includes(:sales)
   end
   def show
     @client = Client.find(params[:id])

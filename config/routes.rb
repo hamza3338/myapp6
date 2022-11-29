@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :stories
   root 'clients#index'
   resources :clients
   # root 'projects#index'
