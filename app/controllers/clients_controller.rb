@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 class ClientsController < ApplicationController
   def index
-    @client = Client.includes(:sales)
+    @client = Client.all(:sales)
   end
+
   def show
     @client = Client.find(params[:id])
   end
+
   def new
     @client = Client.new
   end
+
   def create
     @client = Client.new(client_strong_params)
     if @client.save
@@ -16,8 +19,11 @@ class ClientsController < ApplicationController
       redirect_to clients_path
     end
   end
+
   private
+
   def client_strong_params
     params.require(:client).permit(:name, :contact_no, :age, :email, :address)
   end
+
 end
