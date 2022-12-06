@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :stories
-  root 'clients#index'
+  # root 'clients#index'
+  root to: "clients#index"
+
   resources :clients
   # root 'projects#index'
 

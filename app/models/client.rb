@@ -2,21 +2,23 @@
 class Client < ApplicationRecord
   has_many :sales
   validates :name, presence: true
-  validates_length_of :name, maximum: 10
-  after_save :after_save_status
-  before_save :before_save_status
-  after_commit :after_commit_status
+  validates :contact_no, numericality: true
+  # validates :name, format: { with: /\A[a-zA-Z]+\z/, message: 'only allows letters' }
+  validate :age_less_than_25
+  validates :age, numericality: { message: "%{value} seems wrong" }
+  scope :find_name, -> { where("name = ?", 'Hamza Ahmad') }
+  scope :find_contacts, -> { where("contact_no = ?", '3338606280')}
 
-  def after_save_status
-    puts "Client Details Are Saved Using Callbacks"
+  def self.find_name
+    where("name = ?", 'Hamza Ahmad')
   end
 
-  def before_save_status
-    puts "Client Details Are Saved Using Before Save"
-  end
+  private
 
-  def after_commit_status
-    puts "Client Details Saved Using After Commit"
+  def age_less_than_25
+    if age > 25
+      errors.add(:age, 'Your age is greater than 25')
+    end
   end
 
 end
