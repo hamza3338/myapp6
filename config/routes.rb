@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :stories
   # root 'clients#index'
   root to: "clients#index"
-
   resources :clients
   # root 'projects#index'
 

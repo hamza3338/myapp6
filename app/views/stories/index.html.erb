@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Stories</h1>
-
-<table>
+<div class="story-count">
+  <%= @stories.count %>
+  /
+  <%= Story.count %>
+  <p class="px-2">Stories</p>
+</div>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Title</th>
@@ -10,20 +14,26 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @stories.each do |story| %>
       <tr>
         <td><%= story.title %></td>
         <td><%= story.content %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', story, :method => :get, class: 'btn btn-info' %></td>
+        <td><%= button_to 'Edit', edit_story_path(story), :method => :get, class: 'btn btn-warning' %></td>
+        <td><%= button_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class="row">
+  <div class="col-6">
+    <%= button_to 'New Story', new_story_path, :method => :get, class: 'btn btn-primary' %>
+  </div>
+    <br>
+  <div class="d-flex col-6 justify-content-end">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>
 
-<br>
 
-<%= link_to 'New Story', new_story_path %>

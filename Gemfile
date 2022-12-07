@@ -9,6 +9,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise-bootstrap-views', '~> 1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+gem 'pagy', '~> 5.10'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets

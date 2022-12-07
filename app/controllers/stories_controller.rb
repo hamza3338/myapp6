@@ -3,7 +3,8 @@ class StoriesController < ApplicationController
 
   # GET /stories or /stories.json
   def index
-    @stories = Story.all
+    # @stories = Story.all
+    @pagy, @stories = pagy(Story.all)
   end
 
   # GET /stories/1 or /stories/1.json
