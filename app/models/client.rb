@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class Client < ApplicationRecord
-  has_many :sales
+  has_many :sales,  inverse_of: :client
   validates :name, presence: true
   validates :contact_no, numericality: true
   # validates :name, format: { with: /\A[a-zA-Z]+\z/, message: 'only allows letters' }
