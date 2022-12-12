@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :path_names => { :sign_up => "register" }
   resources :stories
   # root 'clients#index'
   root to: "clients#index"
   resources :clients
+
   # root 'projects#index'
 
   # get '/projects', to: 'clients#index'
