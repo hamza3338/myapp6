@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap';
+
 @font-face {
   font-family: 'Poppins';
   src: url('Poppins-Medium.ttf');
@@ -17,3 +18,38 @@
 .story-count{
   display: flex;
 }
+//.pagy-style{
+//  background-color: black;
+//}
+
+/*//.pagy-bootstrap-nav {*/
+/*//  //color: black;*/
+/*//}*/
+/*//.pagination {*/
+/*//  color: yellow !important;*/
+/*//  background-color: red !important;;*/
+/*//}*/
+/*//.page-item prev disabled {*/
+/*//  color: #730E15 !important;*/
+/*//}*/
+
+/*//.page prev disabled{*/
+/*//  color: white !important;*/
+/*//}*/
+/*//.pagy-nav pagination{*/
+/*//  border-spacing: 20px;*/
+/*//}*/
+
+//.page active{
+//
+//}
+
+.page{
+  padding-left: 15px !important;
+  color: black;
+}
+
+
+
+
+
