@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_12_072439) do
+ActiveRecord::Schema.define(version: 2022_12_12_095534) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "physician_id"
@@ -87,8 +87,9 @@ ActiveRecord::Schema.define(version: 2022_12_12_072439) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
+    t.integer "name"
     t.string "description"
+    t.index ["name"], name: "index_projects_on_name"
   end
 
   create_table "sales", force: :cascade do |t|
