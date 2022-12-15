@@ -36,6 +36,7 @@
   <div class="d-flex col-6 justify-content-end">
     <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
   </div>
+  <%= link_to "Export", stories_path(format: 'csv') %>
 </div>
 
 

@@ -5,6 +5,10 @@ class StoriesController < ApplicationController
   def index
     # @stories = Story.all
     @pagy, @stories = pagy(Story.all)
+    respond_to do |format|
+      format.html
+      format.csv { send_data Story.to_csv, filename: "stories-#{DateTime.now.strftime("%d%m%Y%H%M")}.csv" }
+    end
   end
 
   # GET /stories/1 or /stories/1.json

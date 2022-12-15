@@ -45,7 +45,7 @@ class ClientsController < ApplicationController
   end
 
   def client_strong_params
-    params.require(:client).permit(:name, :contact_no, :age, :email, :address)
+    params.require(:client).permit(:name, :contact_no, :age, :email, :address, :image[])
   end
 
 end
